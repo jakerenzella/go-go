@@ -2,6 +2,8 @@
 
 PROJECT_PATH=$1
 
+mkdir -p ~/.dotfiles
+
 cat <<EOF > ~/.dotfiles/ggdoubtfire
 $VISUAL $PROJECT_PATH/doubtfire-web
 $VISUAL $PROJECT_PATH/doubtfire-api
