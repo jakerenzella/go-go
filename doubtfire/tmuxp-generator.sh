@@ -2,7 +2,8 @@
 
 PROJECT_PATH=$1
 
-cat <<EOF > ~/.tmuxp/doubtfire-test.json
+mkdir -p ~/.tmuxp
+cat <<EOF > ~/.tmuxp/doubtfire.json
 {
   "session_name": "doubtfire",
   "windows": [
