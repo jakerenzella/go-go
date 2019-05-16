@@ -1,13 +1,13 @@
 #!/bin/bash
 
-while true; do
-    read -p "Do you wish to install tmuxp?" yn
-    case $yn in
-        [Yy]* ) pip3 install tmuxp ;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+
+if ! [ -x "$(command -v tmux)" ] ; then
+  brew install tmux
+fi
+
+if ! [ -x "$(command -v tmuxp)" ] ; then
+  pip3 install tmuxp
+fi
 
 echo "Enter the root path of this project without the trailing slash"
 echo "For example: ~Repos/doubtfire"
