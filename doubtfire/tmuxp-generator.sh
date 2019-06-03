@@ -16,7 +16,7 @@ cat <<EOF > ~/.tmuxp/doubtfire.json
       "panes": [
         {
           "shell_command": [
-            "lsof -i tcp:3000 | awk 'NR!=1 {print $2}' | xargs kill",
+            " kill -9 $(lsof -i tcp:3000 -t)",
             "cd $PROJECT_PATH/doubtfire-api",
             "bundle exec rails s"
           ]
