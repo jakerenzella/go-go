@@ -10,7 +10,7 @@ if ! [ -x "$(command -v tmuxp)" ] ; then
 fi
 
 echo "Enter the root path of this project without the trailing slash"
-echo "For example: ~Repos/doubtfire"
+echo "For example: ~/Repos/doubtfire"
 echo
 read -p "Enter path: " dirpath
 
@@ -18,5 +18,7 @@ read -p "Enter path: " dirpath
 # ln -s -f ${HOME}/.tmux/.tmux.conf
 # cp ${HOME}.tmux/.tmux.conf.local .
 
+echo "Generating tmuxp configuration..."
 ./doubtfire/tmuxp-generator.sh ${dirpath}
+echo "Generating ggdoubtfire file..."
 ./doubtfire/ggdoubtfire-generator.sh ${dirpath}
